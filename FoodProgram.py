@@ -15,16 +15,7 @@ def main():
     order_total = 0
 
     # cID, name, address, email, phone, mem_status, date, item_name, cost
-    """
-    transaction1 = fc.Transaction(
-        "570",
-        "Danni Sellyar",
-        "97 Mitchell Way Hewitt Texas 76712",
-        "dsellyarft@gmpg.org",
-        "254-555-9362",
-        "False",
-    )
-    """
+
     for transaction in dict:
         cID = dict[transaction][3]
         if cID == 570:
@@ -42,6 +33,32 @@ def main():
                 dict[transaction][2],
             )
             order_total += cost
+            print("Customer Name:", transaction1.get_name())
+            print("Phone Number:", transaction1.get_phone())
+            print(
+                f"Order Item:{transaction1.get_item_name()} Price: ${format(transaction1.get_cost(), '.2f')}"
+            )
+            print(f"Total: ${format(order_total, '.2f')}")
+
+    for transaction in dict:
+        cID = dict[transaction][3]
+        if cID == 569:
+            cost = dict[transaction][2]
+            # order_total += cost
+            transaction1 = fc.Transaction(
+                "569",
+                "Aubree Himsworth",
+                "1172 Moulton Hill Waco Texas 76710",
+                "ahimsworthfs@list-manage.com",
+                "254-555-2273",
+                "True",
+                dict[transaction][0],
+                dict[transaction][1],
+                dict[transaction][2],
+            )
+            transaction1.get_mem_status()
+            if transaction1.get_mem_status == "True":
+                order_total += cost * 0.8
             print("Customer Name:", transaction1.get_name())
             print("Phone Number:", transaction1.get_phone())
             print(
