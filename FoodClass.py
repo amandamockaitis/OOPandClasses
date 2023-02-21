@@ -42,15 +42,15 @@ Transaction Class - that has the following attributes
 """
 
 
-class Transaction(Customer):
-    def __init__(
-        self, cID, name, address, email, phone, mem_status, tdate, item_name, cost
-    ):
-        Customer.__init__(self, cID, name, address, email, phone, mem_status)
-
+class Transaction:
+    def __init__(self, tdate, item_name, cost, cID):
         self.__tdate = tdate
         self.__item_name = item_name
         self.__cost = cost
+        self.__cID = cID
+
+    def get_cID(self):
+        return self.__cID
 
     def get_tdate(self):
         return self.__tdate
