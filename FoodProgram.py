@@ -57,13 +57,16 @@ def main():
             f"Order Item: {transaction.get_item_name()} Price: ${format(cost, '.2f')}"
         )
 
-        print(f"Total: ${format(order_total, '.2f')}")
-
         order_total += cost
 
+    print(f"Total: ${format(order_total, '.2f')}")
+
     if customer1.get_mem_status() == "True":
-        discount = cost * 0.2
-        order_total = -discount
+        discount = order_total * 0.2
+        order_total -= discount
         print(f"Member Discount: ${format(discount, '.2f')}")
 
-    print(f"Total: ${format(order_total, '.2f')}")
+    print(f"Total after Discount: ${format(order_total, '.2f')}")
+
+
+main()
